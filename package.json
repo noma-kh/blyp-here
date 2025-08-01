@@ -1,0 +1,21 @@
+{
+  "name": "coffeeshop-discovery-platform",
+  "version": "1.0.0",
+  "description": "Full-stack coffeeshop discovery platform for Mongolia",
+  "scripts": {
+    "dev": "concurrently \"npm run backend:dev\" \"npm run frontend:start\"",
+    "backend:dev": "cd backend && npm run dev",
+    "backend:start": "cd backend && npm start",
+    "backend:seed": "cd backend && npm run seed",
+    "frontend:start": "cd frontend && npm start",
+    "frontend:build": "cd frontend && npm run build",
+    "install:all": "npm install && cd backend && npm install && cd ../frontend && npm install",
+    "build": "npm run frontend:build"
+  },
+  "devDependencies": {
+    "concurrently": "^7.6.0"
+  },
+  "keywords": ["coffeeshop", "discovery", "mongodb", "react", "express"],
+  "author": "Your Name",
+  "license": "MIT"
+}
