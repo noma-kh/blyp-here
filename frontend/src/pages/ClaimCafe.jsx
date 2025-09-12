@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useAuth } from '../services/auth.js';
 import axios from 'axios';
+import ErrorState from '../components/ErrorState.jsx';
 
 export default function ClaimCafe() {
   const { token } = useAuth();
@@ -25,7 +26,7 @@ export default function ClaimCafe() {
         <input className="border rounded px-3 py-2 w-full" placeholder="Existing Cafe ID" value={cafeId} onChange={(e)=>setCafeId(e.target.value)} />
         <button className="px-4 py-2 rounded-full bg-black text-white">Submit claim</button>
         {status === 'success' && <p className="text-green-600 text-sm">Request sent. We’ll notify you after review.</p>}
-        {status === 'error' && <p className="text-red-600 text-sm">Could not submit claim. Try again.</p>}
+        {status === 'error' && <ErrorState message="Could not submit claim" />}
       </form>
     </section>
   );

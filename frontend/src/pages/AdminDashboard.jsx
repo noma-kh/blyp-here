@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import { useAuth } from '../services/auth.js';
 import axios from 'axios';
+import EmptyState from '../components/EmptyState.jsx';
+import ErrorState from '../components/ErrorState.jsx';
 
 export default function AdminDashboard() {
   const { token } = useAuth();
@@ -34,9 +36,9 @@ export default function AdminDashboard() {
           <button key={k} onClick={()=>setTab(k)} className={`py-2 ${tab===k? 'border-b-2 border-black font-medium':''}`}>{k[0].toUpperCase()+k.slice(1)}</button>
         ))}
       </div>
-      {error && <div className="text-red-600">{error}</div>}
+      {error && <ErrorState message={error} retry={fetchItems} />}
       {items.length === 0 ? (
-        <div className="text-gray-600">No applications.</div>
+        <EmptyState title="No applications" subtitle="You're all caught up." />
       ) : (
         <ul className="space-y-3">
           {items.map((s)=> (

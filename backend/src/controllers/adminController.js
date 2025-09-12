@@ -1,5 +1,6 @@
 import Suggestion from '../models/Suggestion.js';
 import Cafe from '../models/Cafe.js';
+import { awardBadgesForSuggestionApproval } from '../utils/awardBadges.js';
 
 export const listSuggestions = async (req, res) => {
   const { status = 'pending' } = req.query;
@@ -23,6 +24,7 @@ export const approveSuggestion = async (req, res) => {
   if (sug.type === 'claim' && sug.cafe) {
     await Cafe.findByIdAndUpdate(sug.cafe, { owner: sug.submitter });
   }
+  await awardBadgesForSuggestionApproval(sug.submitter);
   res.json({ suggestion: sug });
 };
 
