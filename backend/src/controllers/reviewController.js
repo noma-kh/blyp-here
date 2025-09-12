@@ -1,5 +1,6 @@
 import Review from '../models/Review.js';
 import Cafe from '../models/Cafe.js';
+import { awardBadgesForReview } from '../utils/awardBadges.js';
 
 export const createReview = async (req, res) => {
   const { cafeId, rating, comment } = req.body || {};
@@ -15,6 +16,8 @@ export const createReview = async (req, res) => {
   ]);
   const { ratingAvg = 0, ratingCount = 0 } = agg[0] || {};
   await Cafe.findByIdAndUpdate(review.cafe, { ratingAvg, ratingCount });
+  // Award badges
+  await awardBadgesForReview(req.user._id);
   res.status(201).json({ review });
 };
 
