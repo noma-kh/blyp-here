@@ -27,3 +27,19 @@ export const getCafe = async (req, res) => {
   res.json({ cafe, reviews });
 };
 
+export const createCafe = async (req, res) => {
+  const payload = { ...req.body, owner: req.user._id };
+  const cafe = await Cafe.create(payload);
+  res.status(201).json({ cafe });
+};
+
+export const updateCafe = async (req, res) => {
+  const cafe = await Cafe.findOneAndUpdate(
+    { _id: req.params.id, owner: req.user._id },
+    req.body,
+    { new: true }
+  );
+  if (!cafe) return res.status(404).json({ message: 'Cafe not found or not owned by user' });
+  res.json({ cafe });
+};
+
