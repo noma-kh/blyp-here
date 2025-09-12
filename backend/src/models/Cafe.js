@@ -21,7 +21,8 @@ const cafeSchema = new mongoose.Schema(
     location: locationSchema,
     images: [String],
     ratingAvg: { type: Number, default: 0 },
-    ratingCount: { type: Number, default: 0 }
+    ratingCount: { type: Number, default: 0 },
+    owner: { type: mongoose.Schema.Types.ObjectId, ref: 'User' }
   },
   { timestamps: true }
 );

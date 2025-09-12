@@ -4,7 +4,8 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        sans: ['Inter', 'ui-sans-serif', 'system-ui', 'sans-serif']
+        sans: ['Inter', 'ui-sans-serif', 'system-ui', 'sans-serif'],
+        display: ['Poppins', 'Inter', 'system-ui', 'sans-serif']
       },
       colors: {
         neutral: {
@@ -12,10 +13,12 @@ export default {
         }
       },
       borderRadius: {
-        xl: '14px'
+        xl: '14px',
+        sm: '10px',
+        card: '10px'
       },
       boxShadow: {
-        card: '0 2px 12px rgba(16,24,40,0.06)'
+        card: '0 4px 16px rgba(16,24,40,0.08)'
       }
     }
   },

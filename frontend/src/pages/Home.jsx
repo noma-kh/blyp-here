@@ -23,8 +23,8 @@ export default function Home() {
   return (
     <section className="space-y-10">
       <div className="text-center space-y-2">
-        <h1 className="text-3xl font-semibold">What is coffee for YOU?</h1>
-        <p className="text-gray-600">For us, coffee is a community.</p>
+        <h1 className="title-xl">What is coffee for YOU?</h1>
+        <p className="body-base text-gray-600">For us, coffee is a community.</p>
         <form onSubmit={onSearch} className="mt-4 flex items-center gap-2 max-w-xl mx-auto">
           <input
             className="border rounded-full px-4 py-2 flex-1"

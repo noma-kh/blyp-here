@@ -7,6 +7,14 @@
 }
 
 .card {
-  @apply bg-white border border-gray-200 rounded-xl shadow-card;
+  @apply bg-white border border-gray-200 rounded-card shadow-card;
+}
+
+.title-xl {
+  @apply font-display font-semibold text-[30px] leading-[36px] tracking-tight text-neutral-950;
+}
+
+.body-base {
+  @apply font-sans text-[16px] leading-6 text-neutral-950;
 }
 
