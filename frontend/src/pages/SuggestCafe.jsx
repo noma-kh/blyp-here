@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useAuth } from '../services/auth.js';
 import axios from 'axios';
+import ErrorState from '../components/ErrorState.jsx';
 
 export default function SuggestCafe() {
   const { token } = useAuth();
@@ -36,7 +37,7 @@ export default function SuggestCafe() {
         </div>
         <button className="px-4 py-2 rounded-full bg-black text-white">Submit</button>
         {status === 'success' && <p className="text-green-600 text-sm">Thanks! We’ll review your suggestion.</p>}
-        {status === 'error' && <p className="text-red-600 text-sm">Something went wrong. Please try again.</p>}
+        {status === 'error' && <ErrorState message="Could not submit your suggestion" />}
       </form>
     </section>
   );
