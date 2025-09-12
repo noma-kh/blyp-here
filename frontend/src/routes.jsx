@@ -6,6 +6,9 @@ import Signup from './pages/Signup.jsx';
 import Profile from './pages/Profile.jsx';
 import OwnerDashboard from './pages/owners/OwnerDashboard.jsx';
 import OwnerSettings from './pages/owners/OwnerSettings.jsx';
+import SuggestCafe from './pages/SuggestCafe.jsx';
+import ClaimCafe from './pages/ClaimCafe.jsx';
+import AdminDashboard from './pages/AdminDashboard.jsx';
 
 export default [
   { path: '/', element: Home },
@@ -16,5 +19,8 @@ export default [
   { path: '/profile', element: Profile }
   ,{ path: '/owner', element: OwnerDashboard }
   ,{ path: '/owner/settings', element: OwnerSettings }
+  ,{ path: '/suggest', element: SuggestCafe }
+  ,{ path: '/claim', element: ClaimCafe }
+  ,{ path: '/admin', element: AdminDashboard }
 ];
 
