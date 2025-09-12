@@ -12,7 +12,8 @@ const userSchema = new mongoose.Schema(
       index: true
     },
     password: { type: String, required: true, minlength: 6 },
-    avatarUrl: { type: String }
+    avatarUrl: { type: String },
+    role: { type: String, enum: ['user', 'admin'], default: 'user' }
   },
   { timestamps: true }
 );
