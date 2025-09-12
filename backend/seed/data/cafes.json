@@ -1,0 +1,27 @@
+[
+  {
+    "name": "Bloom & Brew",
+    "description": "Light, airy workspace with specialty espresso.",
+    "tags": ["wifi", "outlets", "quiet"],
+    "location": {
+      "address": "123 Market St",
+      "city": "San Francisco",
+      "country": "USA",
+      "coordinates": { "type": "Point", "coordinates": [-122.401, 37.793] }
+    },
+    "images": []
+  },
+  {
+    "name": "Night Owl Coffee",
+    "description": "Open late with strong coffee and cozy vibes.",
+    "tags": ["late-night", "cozy"],
+    "location": {
+      "address": "456 Pine Ave",
+      "city": "San Francisco",
+      "country": "USA",
+      "coordinates": { "type": "Point", "coordinates": [-122.41, 37.79] }
+    },
+    "images": []
+  }
+]
+
